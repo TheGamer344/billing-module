@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #1a202c; /* Dark background */
+  color: #f7fafc; /* Light text */
+}
+
+button {
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #dd6b20; /* Darker orange on hover */
+}
+
+/* Custom styles for react-calendar */
+.react-calendar {
+  background-color: #2d3748;
+  border-radius: 8px;
+  color: #f7fafc;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.react-calendar__tile--active {
+  background-color: #dd6b20 !important;
+}
+
+.react-calendar__tile--now {
+  background-color: #4a5568 !important;
+}
