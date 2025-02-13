@@ -5,7 +5,12 @@ export function useTasksForWeek(date: Date): string[] {
 
   useEffect(() => {
     fetch('/api/tasks')
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         const startOfWeek = new Date(date);
         startOfWeek.setDate(date.getDate() - date.getDay()); // Set to Sunday
